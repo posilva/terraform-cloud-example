@@ -1,18 +1,19 @@
 terraform {
   backend "remote" {
-    hostname = "app.terraform.io"
+    hostname     = "app.terraform.io"
     organization = "xcoderpt"
 
     workspaces {
-      name = "{{WORKSPACE_NAME}}"
+      name = "terraform-cloud-example"
+
     }
-    
+
   }
   required_version = ">= 0.15.0"
 
   required_providers {
     aws = {
-      source = "hashicorp/aws"
+      source  = "hashicorp/aws"
       version = ">= 4.27.0"
     }
   }
